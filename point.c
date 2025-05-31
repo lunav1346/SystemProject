@@ -1,6 +1,6 @@
 #include <ncurses.h>
 #include <unistd.h>
-#include "point.h"
+#include "game.h"
 
 void point(player *pt){
     char ch = getch();  // getch <- 입력 받아옴, 없어도 아래 코드 진행
