@@ -21,13 +21,3 @@ void draw_item(int y, int x, char* s) {
 }
 
 void check_item(object* o, Stat* s) {}
-
-void spawn_obstacle(object* o) {
-    o->x = 5; o->y = 10;
-}
-
-void draw_obstacle(int y, int x, char* s) {
-    mvprintw(y, x, "%s", s);
-}
-
-void check_obstacle(object* o, Stat* s) {}

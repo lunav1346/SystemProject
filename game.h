@@ -45,6 +45,6 @@ void check_item(object*, Stat*);
 
 void spawn_obstacle(object*);
 void draw_obstacle(int, int, char*);
-void check_obstacle(object*, Stat*);
+void check_obstacle(object*);
 
 #endif // GAME_H
