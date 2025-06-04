@@ -22,6 +22,7 @@ typedef struct {
 
 void point(player*);
 void spawn_point(player*);
+void move_point(player*);
 void draw_point(int, int, char*);
 void check_point(player*);
 

@@ -8,11 +8,13 @@ void point(player *pt){
     if (ch =='w')        pt->dir = 'w';
     else if (ch =='s')   pt->dir = 's';
     else if (ch =='a')   pt->dir = 'a';
-    else if (ch =='d'){  pt->dir = 'd';
-    }
+    else if (ch =='d')  pt->dir = 'd';
+    
 
     draw_point(pt->y, pt->x, " "); // 움직이기 전 좌표의 point를 지움
 
+    move_point(pt); // 아래 스위치 문을 어셈블리로 구현한 함수, point.s에 정의됨
+    /*
     switch (pt->dir)
     {
     case 'w' :
@@ -30,6 +32,7 @@ void point(player *pt){
     default:
         break;
     }
+    */
     check_point(pt);                        // 충돌 확인
     draw_point(pt->y, pt->x, "@");          // point 그림
     return;
@@ -44,6 +47,7 @@ void spawn_point(player* pt){
 void draw_point(int y, int x, char* str){
     mvprintw(y, x, "%s", str);
 }
+
 
 void check_point(player *pt){
     if (pt->x < 0) pt->x = 0;               // 충돌, 오버플로우 방지
