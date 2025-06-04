@@ -13,8 +13,9 @@ void point(player *pt){
 
     draw_point(pt->y, pt->x, " "); // 움직이기 전 좌표의 point를 지움
 
-    move_point(pt); // 아래 스위치 문을 어셈블리로 구현한 함수, point.s에 정의됨
-    /*
+    // 아래 함수 사용 시, switch문 주석 처리 및 아래 주석을 제거 해주셔야 합니다, arm32에서만 동작
+    // move_point(pt); // 아래 스위치 문을 어셈블리로 구현한 함수, point.s에 정의됨
+    
     switch (pt->dir)
     {
     case 'w' :
@@ -32,7 +33,7 @@ void point(player *pt){
     default:
         break;
     }
-    */
+    
     check_point(pt);                        // 충돌 확인
     draw_point(pt->y, pt->x, "@");          // point 그림
     return;
