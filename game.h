@@ -2,7 +2,9 @@
 #define GAME_H
 
 #include <stdbool.h>
-
+#inclued <time.h> //item파트 수정
+extern bool immutable; //item파트 수정
+extern time_t immutable_end; //item파트 수정
 
 typedef struct Stat {
     int score;
