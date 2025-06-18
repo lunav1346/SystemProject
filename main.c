@@ -28,7 +28,7 @@ int main() {
     Stat stat = { .score = 0 }; // 게임 상태 초기화
 
     // player point1; // 플레이어 포인트 초기화
-    object food, item[item_num], obstacle; // 게임 오브젝트들   item 부분 수정 item -> item[item_num]으로 수정
+    object food, items[item_num], obstacle; // 게임 오브젝트들   item 부분 수정 item -> item[item_num]으로 수정
 
     spawn_point(&point1); // 플레이어 포인트 스폰
     spawn_food(&food); // 음식 오브젝트 스폰
