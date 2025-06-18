@@ -33,7 +33,7 @@ int main() {
     spawn_point(&point1); // 플레이어 포인트 스폰
     spawn_food(&food); // 음식 오브젝트 스폰
     for (int i = 0; i < item_num; i++) {  //item부분수정 --> 변경: 아이템 하나만 생성하던 것을, 반복문을 통해 3개 생성하도록 변경
-        spawn_item(&item); // 아이템 오브젝트 스폰
+        spawn_item(&item[i]); // 아이템 오브젝트 스폰
     }
     draw_point(point1.y, point1.x, "@"); // 초기 위치 강제 출력
 
