@@ -112,6 +112,11 @@ void draw_obstacle(int y, int x, char* symbol) {
 }
 
 void check_obstacle(object* obs) {
+
+    if (immutable){
+        return;
+    }    //item부분 수정(if문 추가)
+    
     // Check collision with all active obstacles
     for(int i = 0; i < MAX_OBSTACLES; i++) {
         if(obstacles[i].active) {
