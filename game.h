@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include <stdbool.h>
-#incluede <time.h> //item파트 수정
+#include <time.h> //item파트 수정
 extern bool immutable; //item파트 수정
 extern time_t immutable_end; //item파트 수정
 
