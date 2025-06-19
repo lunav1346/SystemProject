@@ -3,8 +3,8 @@
 
 #include <stdbool.h>
 #include <time.h> //item파트 수정
-extern bool immutable; //item파트 수정
-extern time_t immutable_end; //item파트 수정
+extern bool immortal; //item파트 수정
+extern time_t immortal_end; //item파트 수정
 
 typedef struct Stat {
     int score;
@@ -44,7 +44,7 @@ void check_food(object*, Stat*);
 
 void spawn_item(object*);
 void draw_item(int, int, char*);
-void check_item(object*, Stat*);
+void check_item(object*, player* p, bool* is_immortal, time_t* end_time);
 
 void spawn_obstacle(object*);
 void draw_obstacle(int, int, char*);
