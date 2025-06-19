@@ -18,7 +18,7 @@ void spawn_item(object* item) {
         new_x = rand() % WIDTH;
         new_y = (rand() % (HEIGHT - 3)) + 3;
         attempts++;
-        if (attempts > 100) { // 100번 시도 후에도 못 찾으면 그냥 마지막 위치에 생성
+        if (attempts > 100) { // 100번 시도 후에도 못 찾으면 리턴
             return;
         }
     } while ((mvinch(new_y, new_x) & A_CHARTEXT) == '^');
