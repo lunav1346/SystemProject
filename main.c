@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "game.h"           // 게임 관련 헤더 파일
-#include "stubs.h"          // 임시용 함수 선언모음집
 
 #define GAME_DURATION 60    // 게임 시간 
 #define FRAME_DELAY 100     // 프레임 딜레이
@@ -14,7 +13,7 @@ player point1;              // 플레이어 포인트 초기화
 const int item_num = ITEM_NUM; // extern으로 쓰기 위해 const 변수화
 object items[ITEM_NUM];
 
-bool immortal = false;     // '무적' 아이템의 상태를 공유하기 위한 전역 변수들
+bool immortal = false;      // '무적' 아이템의 상태를 공유하기 위한 전역 변수들
 time_t immortal_end;
 
 int main() {
@@ -31,7 +30,7 @@ int main() {
 
     Stat stat = { .score = 0 };             // 게임 상태 초기화
 
-    object food, obstacle; // 게임 오브젝트들   
+    object food, obstacle;                  // 게임 오브젝트들   
 
     spawn_point(&point1);                   // 플레이어 포인트 스폰
 

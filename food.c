@@ -1,4 +1,4 @@
-#include "stubs.h"  // 또는 food.h
+#include "game.h"  // 또는 food.h
 #include <stdlib.h>
 #include <time.h>
 #include <ncurses.h>
