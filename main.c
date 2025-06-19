@@ -10,10 +10,11 @@
 #define item_num 3          // 아이템 개수를 관리하기 위한 매크로 추가
 
 player point1;              // 플레이어 포인트 초기화
-bool immutable = false;     // '무적' 아이템의 상태를 공유하기 위한 전역 변수들
-time_t immutable_end;
+bool immortal = false;     // '무적' 아이템의 상태를 공유하기 위한 전역 변수들
+time_t immortal_end;
 
 int main() {
+    srand(time(NULL));  //item 파트 추가
     initscr();              // ncurses 초기화
     cbreak();               // 입력을 즉시 처리
     noecho();               // 입력을 화면에 출력하지 않음
@@ -48,9 +49,9 @@ int main() {
         point(&point1);                     // 플레이어 포인트 업데이트
 
         // '무적' 상태를 확인하고, 시간이 다 되면 해제하며, 플레이어 심볼을 바꾸는 로직
-        if (immutable) {
-            if (time(NULL) > immutable_end) {
-                immutable = false;
+        if (immortal) {
+            if (time(NULL) > immortal_end) {
+                immortal = false;
                 draw_point(point1.y, point1.x, "@");
             } else {
                 draw_point(point1.y, point1.x, "S");
@@ -71,7 +72,7 @@ int main() {
 
         // 아이템 하나만 충돌 검사하던 것을, 반복문을 통해 3개 모두 검사하도록 변경
         for (int i = 0; i < item_num; i++) {
-            check_item(&items[i], &stat); 
+            check_item(&items[i], &point1, &immortal, &immortal_end); 
         }
         check_obstacle(&obstacle);          // 장애물 오브젝트 충돌 체크
 
