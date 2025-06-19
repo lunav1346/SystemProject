@@ -21,6 +21,7 @@ static const int SPAWN_INTERVAL = 30;  // Spawn new obstacle every 30 frames
 static bool initialized = false;
 static bool first_spawn = true;
 
+// spawn_obstacle >> AI가 짠 부분
 void spawn_obstacle(object* obs) {
     if (!initialized) {
         srand(time(NULL));
