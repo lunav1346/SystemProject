@@ -4,18 +4,13 @@
 #include <stdio.h>
 #include <time.h>
 #include "game.h"
+#define MAX_OBSTACLES 25
 
 extern player point1;
 
-#define MAX_OBSTACLES 25
+const int max_obstacles=MAX_OBSTACLES;
 
-typedef struct {
-    object obj;
-    int orientation;  // 0: horizontal, 1: vertical
-    bool active;
-} ObstacleData;
-
-static ObstacleData obstacles[MAX_OBSTACLES];
+ObstacleData obstacles[MAX_OBSTACLES];
 static int spawn_counter = 0;
 static const int SPAWN_INTERVAL = 30;  // Spawn new obstacle every 30 frames
 static bool initialized = false;
