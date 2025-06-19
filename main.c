@@ -4,6 +4,7 @@
 #include <time.h>
 #include "game.h" // 게임 관련 헤더 파일
 #include "stubs.h" // 임시용 함수 선언모음집
+#include "food.h" // 
 
 #define GAME_DURATION 60    // 게임 시간 
 #define FRAME_DELAY 100 // 프레임 딜레이
