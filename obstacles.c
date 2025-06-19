@@ -115,7 +115,7 @@ void draw_obstacle(int y, int x, char* symbol) {
 void check_obstacle(object* obs) {
 
     //item부분 수정 -->(if문 추가)
-    if (immutable){
+    if (immortal){
         return;
     }  
     
