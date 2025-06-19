@@ -4,14 +4,17 @@
 #include <time.h>
 #include "game.h" // 게임 관련 헤더 파일
 #include "stubs.h" // 임시용 함수 선언모음집
-#include "food.h" // 
 
 #define GAME_DURATION 60    // 게임 시간 
 #define FRAME_DELAY 100 // 프레임 딜레이
-#define item_num 3 // item 부분 수정 ---> 변경: 아이템 개수를 관리하기 위한 매크로 추가
+#define ITEM_NUM 3
 
 player point1;
 // item부분 수정 --> 추가: '무적' 아이템의 상태를 공유하기 위한 전역 변수들
+
+const int item_num = ITEM_NUM; // extern으로 쓰기 위해 const 변수화
+object items[ITEM_NUM];
+
 bool immutable = false;
 time_t immutable_end;
 
@@ -29,13 +32,13 @@ int main() {
     Stat stat = { .score = 0 }; // 게임 상태 초기화
 
     // player point1; // 플레이어 포인트 초기화
-    object food, items[item_num], obstacle; // 게임 오브젝트들   item 부분 수정 item -> item[item_num]으로 수정
+    object food, obstacle; // 게임 오브젝트들   item 부분 수정 item -> item[item_num]으로 수정
 
     spawn_point(&point1); // 플레이어 포인트 스폰
-    spawn_food(&food); // 음식 오브젝트 스폰
     for (int i = 0; i < item_num; i++) {  //item부분수정 --> 변경: 아이템 하나만 생성하던 것을, 반복문을 통해 3개 생성하도록 변경
         spawn_item(&items[i]); // 아이템 오브젝트 스폰
     }
+    spawn_food(&food); // 음식 오브젝트 스폰
     draw_point(point1.y, point1.x, "@"); // 초기 위치 강제 출력
 
     while (1) {
