@@ -16,7 +16,7 @@ void point(player *pt){
     // 아래 함수 사용 시, switch문 주석 처리 및 아래 주석을 제거 해주셔야 합니다, arm32에서만 동작
     // move_point(pt); // 아래 스위치 문을 어셈블리로 구현한 함수, point.s에 정의됨
     
-    switch (pt->dir)
+    switch (pt->dir)    // wasd 입력에 따른 팩맨과 같은 움직임 구현
     {
     case 'w' :
         pt->y--;
@@ -41,12 +41,12 @@ void point(player *pt){
 
 void spawn_point(player* pt){ 
     pt->x = 0;
-    pt->y = 0;
+    pt->y = 3;
     pt->dir = ' ';                          // 포인트가 계속 진행할 방향
 }
 
 void draw_point(int y, int x, char* str){
-    mvprintw(y, x, "%s", str);
+    mvprintw(y, x, "%s", str);              // 3번째 인자는 리터널 해야합니다 (GPT)
 }
 
 
