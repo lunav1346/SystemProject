@@ -7,6 +7,7 @@
 #define MAX_OBSTACLES 25
 
 extern player point1;
+extern bool game_over;
 
 const int max_obstacles=MAX_OBSTACLES;
 
@@ -134,12 +135,17 @@ void check_obstacle(object* obs) {
             }
             
             if(hit) {
-                clear();
-                mvprintw(HEIGHT/2, WIDTH/2 - 5, "GAME OVER!");
-                refresh();
-                sleep(2);
-                endwin();
-                exit(0);
+                // clear();
+                // mvprintw(HEIGHT/2, WIDTH/2 - 5, "GAME OVER!");
+                // mvprintw(HEIGHT / 2, (WIDTH - 20) / 2, "SCORE : %d", stat.score);
+                // refresh();
+                // sleep(2);
+                // endwin();
+                // exit(0);
+
+                
+                game_over = true;
+                return;
             }
         }
     }
